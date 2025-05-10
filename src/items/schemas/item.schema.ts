@@ -41,8 +41,8 @@ export class Item {
   // @Prop()
   // currency: string;
 
-  @Prop({ required: true })
-  stock: number; // Available quantity
+  // @Prop({ required: true })
+  // stock: number; // Available quantity
 
   @Prop({ required: true })
   isAvailable: boolean;
@@ -51,10 +51,10 @@ export class Item {
   images: string[];
 
   @Prop()
-  createdAt: Date;
+  createdAt: string;
 
   @Prop({ required: true })
-  updatedAt: Date;
+  updatedAt: string;
 
   // @Prop({ required: true })
   // genderTarget: string;
