@@ -37,7 +37,7 @@ export class ItemController {
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.itemService.remove(+id);
+  remove(@Param('id') id: ObjectId) {
+    return this.itemService.remove(id);
   }
 }

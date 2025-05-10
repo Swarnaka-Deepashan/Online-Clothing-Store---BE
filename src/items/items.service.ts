@@ -26,7 +26,7 @@ export class ItemService {
     return this.itemModel.findByIdAndUpdate(id, updateItemDto, { new: true });
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} item`;
+  remove(id: ObjectId) {
+    return this.itemModel.findByIdAndDelete(id);
   }
 }
