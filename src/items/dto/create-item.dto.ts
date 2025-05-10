@@ -4,20 +4,18 @@ export class CreateItemDto {
   category: string;
   subCategory: string;
   brand: string;
+
   sizeOptions: string[];
   colorOptions: string[];
   material: string;
-  price: number;
+  basePrice: number;
   discountPrice: string;
-  // currency: string;
-  stock: number;
+
   isAvailable: boolean;
   images: string[];
   createdAt: Date;
   updatedAt: Date;
-  genderTarget: string;
-  // ratings: number;
   tags: string[];
-  sku: string;
+
   deliveryInfo: string;
 }
