@@ -18,8 +18,8 @@ export class ItemService {
     return this.itemModel.find().exec();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} item`;
+  findOne(id: ObjectId) {
+    return this.itemModel.findById(id);
   }
 
   update(id: ObjectId, updateItemDto: UpdateItemDto) {
