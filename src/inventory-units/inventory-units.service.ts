@@ -4,6 +4,7 @@ import { UpdateInventoryUnitDto } from './dto/update-inventory-unit.dto';
 import { InventoryUnit } from 'src/schemas/inventory-unit.schema';
 import { Model } from 'mongoose';
 import { InjectModel } from '@nestjs/mongoose';
+import { CreateInventoryUnitBatchDto } from './dto/create-inventory-unit-batch.dto';
 
 @Injectable()
 export class InventoryUnitsService {
@@ -17,6 +18,18 @@ export class InventoryUnitsService {
       createInventoryUnitDto,
     );
     return createdInventoryUnit.save();
+  }
+
+  createBatch(createInventoryUnitBatchDto: CreateInventoryUnitBatchDto) {
+    const docArray: InventoryUnit[] = [];
+    const { quantity, ...createInventoryUnitDto } = createInventoryUnitBatchDto;
+    for (let i = 0; i < quantity; i++) {
+      const inventoryUnit: InventoryUnit = new this.inventoryUnitModel(
+        createInventoryUnitDto,
+      );
+      docArray.push(inventoryUnit);
+    }
+    return this.inventoryUnitModel.insertMany(docArray);
   }
 
   findAll() {

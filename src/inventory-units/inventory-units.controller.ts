@@ -10,6 +10,7 @@ import {
 import { InventoryUnitsService } from './inventory-units.service';
 import { CreateInventoryUnitDto } from './dto/create-inventory-unit.dto';
 import { UpdateInventoryUnitDto } from './dto/update-inventory-unit.dto';
+import { CreateInventoryUnitBatchDto } from './dto/create-inventory-unit-batch.dto';
 
 @Controller('inventory-units')
 export class InventoryUnitsController {
@@ -18,6 +19,13 @@ export class InventoryUnitsController {
   @Post()
   create(@Body() createInventoryUnitDto: CreateInventoryUnitDto) {
     return this.inventoryUnitsService.create(createInventoryUnitDto);
+  }
+
+  @Post('/batch')
+  createBatch(
+    @Body() createInventoryUnitBatchDto: CreateInventoryUnitBatchDto,
+  ) {
+    return this.inventoryUnitsService.createBatch(createInventoryUnitBatchDto);
   }
 
   @Get()
