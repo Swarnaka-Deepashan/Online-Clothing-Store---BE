@@ -41,10 +41,10 @@ export class InventoryUnitsController {
 
   @Patch(':id')
   update(
-    @Param('id') id: string,
+    @Param('id') id: ObjectId,
     @Body() updateInventoryUnitDto: UpdateInventoryUnitDto,
   ) {
-    return this.inventoryUnitsService.update(+id, updateInventoryUnitDto);
+    return this.inventoryUnitsService.update(id, updateInventoryUnitDto);
   }
 
   @Delete(':id')
