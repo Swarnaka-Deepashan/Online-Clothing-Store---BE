@@ -36,8 +36,8 @@ export class InventoryUnitsService {
     return this.inventoryUnitModel.insertMany(docArray);
   }
 
-  findAll() {
-    return `This action returns all inventoryUnits`;
+  async findAll(): Promise<InventoryUnit[]> {
+    return this.inventoryUnitModel.find().exec();
   }
 
   findOne(id: number) {
