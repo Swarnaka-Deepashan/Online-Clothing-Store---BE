@@ -44,7 +44,10 @@ export class InventoryUnitsService {
     return this.inventoryUnitModel.findById(id);
   }
 
-  update(id: ObjectId, updateInventoryUnitDto: UpdateInventoryUnitDto) {
+  async update(
+    id: ObjectId,
+    updateInventoryUnitDto: UpdateInventoryUnitDto,
+  ): Promise<InventoryUnit | null> {
     return this.inventoryUnitModel.findByIdAndUpdate(
       id,
       updateInventoryUnitDto,
