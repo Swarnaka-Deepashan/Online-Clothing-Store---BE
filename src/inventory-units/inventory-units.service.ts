@@ -13,7 +13,9 @@ export class InventoryUnitsService {
     private inventoryUnitModel: Model<InventoryUnit>,
   ) {}
 
-  create(createInventoryUnitDto: CreateInventoryUnitDto) {
+  async create(
+    createInventoryUnitDto: CreateInventoryUnitDto,
+  ): Promise<InventoryUnit> {
     const createdInventoryUnit = new this.inventoryUnitModel(
       createInventoryUnitDto,
     );
