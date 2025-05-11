@@ -20,7 +20,9 @@ export class InventoryUnitsService {
     return createdInventoryUnit.save();
   }
 
-  createBatch(createInventoryUnitBatchDto: CreateInventoryUnitBatchDto) {
+  async createBatch(
+    createInventoryUnitBatchDto: CreateInventoryUnitBatchDto,
+  ): Promise<InventoryUnit[]> {
     const docArray: InventoryUnit[] = [];
     const { quantity, ...createInventoryUnitDto } = createInventoryUnitBatchDto;
     for (let i = 0; i < quantity; i++) {
