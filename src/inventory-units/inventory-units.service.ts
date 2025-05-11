@@ -48,7 +48,7 @@ export class InventoryUnitsService {
     return `This action updates a #${id} inventoryUnit`;
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} inventoryUnit`;
+  async remove(id: ObjectId): Promise<InventoryUnit | null> {
+    return this.inventoryUnitModel.findByIdAndDelete(id);
   }
 }
