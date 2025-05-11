@@ -48,7 +48,7 @@ export class InventoryUnitsController {
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.inventoryUnitsService.remove(+id);
+  remove(@Param('id') id: ObjectId) {
+    return this.inventoryUnitsService.remove(id);
   }
 }
