@@ -11,6 +11,7 @@ import { InventoryUnitsService } from './inventory-units.service';
 import { CreateInventoryUnitDto } from './dto/create-inventory-unit.dto';
 import { UpdateInventoryUnitDto } from './dto/update-inventory-unit.dto';
 import { CreateInventoryUnitBatchDto } from './dto/create-inventory-unit-batch.dto';
+import { ObjectId } from 'mongoose';
 
 @Controller('inventory-units')
 export class InventoryUnitsController {
@@ -34,8 +35,8 @@ export class InventoryUnitsController {
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.inventoryUnitsService.findOne(+id);
+  findOne(@Param('id') id: ObjectId) {
+    return this.inventoryUnitsService.findOne(id);
   }
 
   @Patch(':id')
