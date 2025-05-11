@@ -1,5 +1,7 @@
+import { ObjectId } from 'mongoose';
+
 export class CreateInventoryUnitDto {
-  itemId: string;
+  itemId: ObjectId;
   size: string;
 
   color: string;

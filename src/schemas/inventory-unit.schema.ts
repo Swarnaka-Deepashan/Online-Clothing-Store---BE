@@ -2,13 +2,14 @@ import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import mongoose, { HydratedDocument } from 'mongoose';
 import { ClothingSize } from 'src/enums/clothing-size.enum';
 import { InventoryUnitStatus } from 'src/enums/inventory-unit-status.enum';
+import { Item } from './item.schema';
 
 export type InventoryUnitDocument = HydratedDocument<InventoryUnit>;
 
 @Schema()
 export class InventoryUnit {
-  @Prop({ type: { type: mongoose.Schema.Types.ObjectId, ref: 'Item' } })
-  itemId: mongoose.Types.ObjectId;
+  @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'Item' })
+  itemId: Item;
 
   @Prop({ required: true, enum: ClothingSize })
   size: ClothingSize;
