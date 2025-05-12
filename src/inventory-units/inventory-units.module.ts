@@ -1,11 +1,11 @@
 import { Module } from '@nestjs/common';
 import { InventoryUnitsService } from './inventory-units.service';
 import { InventoryUnitsController } from './inventory-units.controller';
+import { MongooseModule } from '@nestjs/mongoose';
 import {
   InventoryUnit,
   InventoryUnitSchema,
-} from 'src/schemas/inventory-unit.schema';
-import { MongooseModule } from '@nestjs/mongoose';
+} from './schemas/inventory-unit.schema';
 
 @Module({
   imports: [

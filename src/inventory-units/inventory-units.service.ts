@@ -1,10 +1,10 @@
 import { Injectable } from '@nestjs/common';
 import { CreateInventoryUnitDto } from './dto/create-inventory-unit.dto';
 import { UpdateInventoryUnitDto } from './dto/update-inventory-unit.dto';
-import { InventoryUnit } from 'src/schemas/inventory-unit.schema';
 import { Model, ObjectId } from 'mongoose';
 import { InjectModel } from '@nestjs/mongoose';
 import { CreateInventoryUnitBatchDto } from './dto/create-inventory-unit-batch.dto';
+import { InventoryUnit } from './schemas/inventory-unit.schema';
 
 @Injectable()
 export class InventoryUnitsService {
