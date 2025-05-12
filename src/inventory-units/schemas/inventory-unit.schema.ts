@@ -2,7 +2,7 @@ import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import mongoose, { HydratedDocument } from 'mongoose';
 import { ClothingSize } from 'src/enums/clothing-size.enum';
 import { InventoryUnitStatus } from 'src/enums/inventory-unit-status.enum';
-import { Item } from './item.schema';
+import { Item } from 'src/items/schemas/item.schema';
 
 export type InventoryUnitDocument = HydratedDocument<InventoryUnit>;
 
