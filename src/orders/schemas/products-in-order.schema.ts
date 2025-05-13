@@ -24,7 +24,7 @@ export class ProductsInOrder {
   selectedColor: string;
 
   @Prop({ required: true })
-  priceAtPurchase: number;
+  basePrice: number;
 }
 
 export const ProductsInOrderSchema =
