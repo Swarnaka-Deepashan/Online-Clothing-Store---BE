@@ -4,7 +4,7 @@ import { InventoryUnit } from 'src/inventory-units/schemas/inventory-unit.schema
 import { Item } from 'src/items/schemas/item.schema';
 
 @Schema({ _id: false })
-export class ProductsInOrder {
+export class productsAllocation {
   @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'InventoryUnit' })
   inventoryUnitIds: InventoryUnit[];
 
@@ -28,4 +28,4 @@ export class ProductsInOrder {
 }
 
 export const ProductsInOrderSchema =
-  SchemaFactory.createForClass(ProductsInOrder);
+  SchemaFactory.createForClass(productsAllocation);

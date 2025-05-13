@@ -1,7 +1,7 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import mongoose, { HydratedDocument } from 'mongoose';
 import { User } from 'src/users/schemas/user.schema';
-import { ProductsInOrder } from './products-in-order.schema';
+import { productsAllocation } from './products-in-order.schema';
 
 export type OrderDocument = HydratedDocument<Order>;
 
@@ -10,8 +10,8 @@ export class Order {
   @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'User' })
   userId: User;
 
-  @Prop({ type: [ProductsInOrder], required: true })
-  productsInOrder: ProductsInOrder[];
+  @Prop({ type: [productsAllocation], required: true })
+  productsAllocations: productsAllocation[];
 
   @Prop({ required: true })
   totalAmount: number;
