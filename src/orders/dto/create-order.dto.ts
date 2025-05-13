@@ -1,6 +1,6 @@
 import { ObjectId } from 'mongoose';
 
-export class productsRequest {
+export class productRequest {
   itemId: ObjectId;
 
   itemName: string;
@@ -17,7 +17,7 @@ export class productsRequest {
 export class CreateOrderDto {
   userId: ObjectId;
 
-  productsRequests: productsRequest[];
+  productRequests: productRequest[];
 
   shippingAddress: string;
 
