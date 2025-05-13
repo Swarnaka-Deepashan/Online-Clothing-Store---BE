@@ -13,8 +13,6 @@ export class CreateItemDto {
 
   isAvailable: boolean;
   images: string[];
-  createdAt: Date;
-  updatedAt: Date;
   tags: string[];
 
   deliveryInfo: string;
