@@ -50,10 +50,10 @@ export class Item {
   @Prop()
   images: string[];
 
-  @Prop()
+  @Prop({ default: Date.now })
   createdAt: string;
 
-  @Prop({ required: true })
+  @Prop({ default: Date.now })
   updatedAt: string;
 
   // @Prop({ required: true })
