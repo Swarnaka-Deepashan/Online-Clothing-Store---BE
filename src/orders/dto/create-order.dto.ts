@@ -19,9 +19,13 @@ export class CreateOrderDto {
 
   productRequests: productRequest[];
 
-  shippingAddress: string;
+  totalAmount: number;
+
+  orderStatus: 'Paid';
+
+  paymentStatus: string;
 
   paymentMethod: string;
 
-  paidAmount: string;
+  shippingAddress: string;
 }
