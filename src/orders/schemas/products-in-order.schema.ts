@@ -1,7 +1,12 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
+import mongoose from 'mongoose';
+import { InventoryUnit } from 'src/inventory-units/schemas/inventory-unit.schema';
 
 @Schema({ _id: false })
 export class ProductsInOrder {
+  @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'InventoryUnit' })
+  inventoryUnitIds: InventoryUnit[];
+
   @Prop({ required: true })
   itemId: string;
 
