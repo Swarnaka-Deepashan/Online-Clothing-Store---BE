@@ -1,17 +1,23 @@
 import { ObjectId } from 'mongoose';
 
+export class variantDetailsDto {
+  selectedSize: string;
+
+  selectedColor: string;
+
+  variantQuantity: number;
+}
+
 export class productRequest {
   itemId: ObjectId;
 
   itemName: string;
 
-  selectedSize: string;
-
-  selectedColor: string;
-
-  quantity: number;
+  variantsDetails: variantDetailsDto[];
 
   basePrice: number;
+
+  quantity: number;
 }
 
 export class CreateOrderDto {
