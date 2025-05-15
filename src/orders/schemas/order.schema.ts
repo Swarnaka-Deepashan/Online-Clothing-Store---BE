@@ -1,7 +1,7 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import mongoose, { HydratedDocument } from 'mongoose';
 import { User } from 'src/users/schemas/user.schema';
-import { productAllocation } from './products-in-order.schema';
+import { productAllocation } from './product-allocation.schema';
 
 export type OrderDocument = HydratedDocument<Order>;
 
