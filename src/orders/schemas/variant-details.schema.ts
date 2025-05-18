@@ -1,6 +1,5 @@
 import { Prop, Schema } from '@nestjs/mongoose';
-import mongoose from 'mongoose';
-import { InventoryUnit } from 'src/inventory-units/schemas/inventory-unit.schema';
+import mongoose, { Types } from 'mongoose';
 
 @Schema({ _id: false })
 export class variantDetailsSchema {
@@ -18,5 +17,5 @@ export class variantDetailsSchema {
     type: [mongoose.Schema.Types.ObjectId],
     ref: 'InventoryUnit',
   })
-  inventoryUnitIds: InventoryUnit[];
+  inventoryUnitIds: Types.ObjectId[];
 }
